@@ -1,10 +1,15 @@
-import loginPage, { LoginPage } from '../pageobjects/LoginPage';
+import { LoginPage } from '../pageobjects/LoginPage';
 
 export class LoginSteps {
-	public enterUserName() {
-		loginPage.usernameInput.setValue('tomsmith');
+	public loginPage: LoginPage;
+
+	// public init() {
+	// 	this.loginPage = LoginPage.instance();
+	// 	// this.loginPage = new LoginPage();
+	// }
+
+	public typeUserName() {
+		this.loginPage = LoginPage.instance();
+		this.loginPage.enterUsername('tomsmith');
 	}
 }
-
-const loginSteps = new LoginSteps();
-export default loginSteps;

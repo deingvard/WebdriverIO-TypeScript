@@ -1,8 +1,11 @@
 import { expect } from 'chai';
-import loginSteps from '../steps/LoginSteps';
+import { LoginSteps } from '../steps/LoginSteps';
 
-describe('webdriver.io page', () => {
+describe('E2E Tests', () => {
+	let loginSteps: LoginSteps;
+
 	beforeEach(() => {
+		loginSteps = new LoginSteps();
 		console.log('before each');
 	});
 	afterEach(() => {
@@ -12,7 +15,7 @@ describe('webdriver.io page', () => {
 
 	it('should have the right title', () => {
 		browser.url('/login');
-		loginSteps.enterUserName();
+		loginSteps.typeUserName();
 
 		browser.pause(1500);
 	});

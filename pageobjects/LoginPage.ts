@@ -1,8 +1,21 @@
-export class LoginPage {
+import { Page } from './Page';
+
+export class LoginPage extends Page {
 	get usernameInput() {
 		return $('#username');
 	}
-}
 
-const loginPage = new LoginPage();
-export default loginPage;
+	public enterUsername(username: string) {
+		this.usernameInput.setValue(username);
+	}
+
+	constructor() {
+		super();
+	}
+
+	public static instance() {
+		let page = new LoginPage();
+		page.verifyIamOnPage();
+		return page;
+	}
+}

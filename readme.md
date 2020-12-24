@@ -50,8 +50,3 @@ For showing the report only:
 ```sh
 npm run run-report
 ```
-
-## Rerferences
-
-[WebdriverIO API](http://webdriver.io/api/)
-[Wdio-Axe-Example](https://github.com/klamping/wdio-axe-example)
