@@ -19,3 +19,5 @@ export class LoginPage extends Page {
 		return page;
 	}
 }
+
+export const loginPage = new LoginPage();

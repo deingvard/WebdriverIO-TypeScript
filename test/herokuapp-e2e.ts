@@ -1,11 +1,10 @@
 import { expect } from 'chai';
-import { LoginSteps } from '../steps/LoginSteps';
+import { loginSteps } from '../steps/LoginSteps';
 
 describe('E2E Tests', () => {
-	let loginSteps: LoginSteps;
-
 	beforeEach(() => {
-		loginSteps = new LoginSteps();
+		// loginSteps = new LoginSteps();
+		loginSteps.init();
 		console.log('before each');
 	});
 	afterEach(() => {
@@ -14,9 +13,7 @@ describe('E2E Tests', () => {
 	});
 
 	it('should have the right title', () => {
-		browser.url('/login');
 		loginSteps.typeUserName();
-
-		browser.pause(1500);
+		browser.pause(100);
 	});
 });
