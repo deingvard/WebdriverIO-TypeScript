@@ -1,6 +1,9 @@
 import { Page } from './Page';
 
 export class LoginPage extends Page {
+	/**
+	 * define elements
+	 */
 	get usernameInput() {
 		return $('#username');
 	}
@@ -19,5 +22,3 @@ export class LoginPage extends Page {
 		return page;
 	}
 }
-
-export const loginPage = new LoginPage();

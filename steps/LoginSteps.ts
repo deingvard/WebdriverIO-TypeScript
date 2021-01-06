@@ -1,19 +1,28 @@
-import { loginPage } from '../pageobjects/LoginPage';
+import { LoginPage } from '../pageobjects/LoginPage';
 
 export class LoginSteps {
-	// public loginPage: LoginPage;
+	public loginPage: LoginPage;
 
+	/**
+	 * Initialize Login Page
+	 */
 	public init() {
 		this.navigateToHerokuappDirect();
-		// this.loginPage = LoginPage.instance();
-		// this.loginPage = new LoginPage();
+		this.loginPage = new LoginPage();
 	}
 
-	public typeUserName() {
-		loginPage.enterUsername('tomsmith');
+	/**
+	 * Enter data on the Herokuapp page
+	 */
+	public enterUserName(data) {
+		this.loginPage.enterUsername(data);
 	}
 
+	/**
+	 * Navigate to Herokuapp direct site
+	 */
 	public navigateToHerokuappDirect() {
+		browser.maximizeWindow();
 		browser.url('/login');
 	}
 }
